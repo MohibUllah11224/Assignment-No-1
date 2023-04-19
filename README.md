@@ -25,5 +25,23 @@ ANS: The given code reads data from a CSV file named "NISPUF17.csv" using the pa
 
 Therefore, the average_influenza_doses function calculates and returns the average number of influenza doses for people who received a flu shot (group df1) and those who did not receive a flu shot (group df2).
 
+## Question 3: It would be interesting to see if there is any evidence of a link between vaccine effectiveness and sex of the child. Calculate the ratio of the number of children who contracted chickenpox but were vaccinated against it (at least one varicella dose) versus those who were vaccinated but did not contract chicken pox. Return results by sex.
+##This function should return a dictionary in the form of (use the correct numbers):
+
+ ##   {"male":0.2,
+   ## "female":0.4}
+
+ANS: 
+* The function first imports the pandas library, which is a library used for data manipulation and analysis.
+* The function then reads in a CSV file named "NISPUF17.csv" and stores it as a pandas DataFrame called df.
+* It selects only the columns of interest from the DataFrame, which are "SEX", "HAD_CPOX", and "P_NUMVRC".
+* It removes any rows containing missing values using the dropna method.
+* It filters out any rows where P_NUMVRC is equal to 0, meaning that the person did not receive any doses of the chickenpox vaccine.
+* It then creates two new DataFrames, one for males and one for females, using boolean indexing based on the "SEX" column.
+* For each gender, it calculates the ratio of the number of people who had chickenpox (indicated by the value 1 in the "HAD_CPOX" column) to the number who did not (indicated by the value 2 in the "HAD_CPOX" column), but only for those who received at least one dose of the vaccine (indicated by P_NUMVRC >= 1).
+* The function then returns a dictionary with two keys, "male" and "female", whose values are the respective ratios calculated above.
+* Finally, the assertion statement checks that the returned dictionary contains exactly two items, one for males and one for females.
+
+
 
 
