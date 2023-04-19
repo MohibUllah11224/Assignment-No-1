@@ -42,6 +42,19 @@ ANS:
 * The function then returns a dictionary with two keys, "male" and "female", whose values are the respective ratios calculated above.
 * Finally, the assertion statement checks that the returned dictionary contains exactly two items, one for males and one for females.
 
+## Question 4:A correlation is a statistical relationship between two variables. If we wanted to know if vaccines work, we might look at the correlation between the use of the vaccine and whether it results in prevention of the infection or disease [1]. In this question, you are to see if there is a correlation between having had the chicken pox and the number of chickenpox vaccine doses given (varicella).
+
+##Some notes on interpreting the answer. The had_chickenpox_column is either 1 (for yes) or 2 (for no), and the num_chickenpox_vaccine_column is the number of doses a child has been given of the varicella vaccine. A positive correlation (e.g., corr > 0) means that an increase in had_chickenpox_column (which means more no’s) would also increase the values of num_chickenpox_vaccine_column (which means more doses of vaccine). If there is a negative correlation (e.g., corr < 0), it indicates that having had chickenpox is related to an increase in the number of vaccine doses.
+
+##Also, pval is the probability that we observe a correlation between had_chickenpox_column and num_chickenpox_vaccine_column which is greater than or equal to a particular value occurred by chance. A small pval means that the observed correlation is highly unlikely to occur by chance. In this case, pval should be very small (will end in e-18 indicating a very small number).
+
+##[1] This isn’t really the full picture, since we are not looking at when the dose was given. It’s possible that children had chickenpox and then their parents went to get them the vaccine. Does this dataset have the data we would need to investigate the timing of the dose? 
+
+ANS: The function average_influenza_doses() reads in the data from a CSV file using pandas and then filters the data based on the value of the "CBF_01" column. The values of 1 and 2 in the "CBF_01" column indicate whether the child was born in the US or not, respectively.
+Two new dataframes are created: one for children born in the US (CBF_01 = 1) and one for children born outside the US (CBF_01 = 2).
+The function then calculates the mean number of influenza vaccine doses administered to children in each group using the "P_NUMFLU" column, which contains the number of flu vaccine doses administered to each child.
+Finally, the function returns a tuple with two values: the mean number of flu vaccine doses for children born in the US and the mean number of flu vaccine doses for children born outside the US.
+
 
 
 
