@@ -5,3 +5,25 @@
 ## Q NO1: Write a function called proportion_of_education which returns the proportion of children in the dataset who had a mother with the education levels equal to less than high school (<12), high school (12), more than high school but not a college graduate (>12) and college degree.
 Ans: first we will create a function that will read the cvs file  containing data on children's health and returns a dictionary with the proportion of children with different levels of education in their household. By using the command 'pd.read_csv()' Then The function calculates the proportion of children in the dataset with each level of education by calling the 'value_counts()' which counts the number of occurrences of each unique value in the column and returns a pandas Series object with the counts. The normalize=True parameter is used to convert the counts to proportions, so that the sum of all proportions is 1.
 The resulting proportions are stored in a dictionary called EDUC1_dict, with education levels as keys and proportion as values.The function returns the EDUC1_dict dictionary.The assertions at the end of the code test that the function returns a dictionary with four items, where the keys are the expected education levels and the values are the expected proportions. The assertions also test that the function returns a dictionary object of the expected type.
+
+
+## Question 2: Let's explore the relationship between being fed breastmilk as a child and getting a seasonal influenza vaccine from a healthcare provider. Return a tuple of the average number of influenza vaccines for those children we know received breastmilk as a child and those who know did not.
+ANS: The given code reads data from a CSV file named "NISPUF17.csv" using the pandas library and then computes the average number of influenza doses for two groups of people based on whether they received a flu shot during the survey period.
+* The first line of the code defines a function named average_influenza_doses
+
+* The second line of the code imports the pandas library as pd
+
+* The third line of the code reads the CSV file "NISPUF17.csv" using the read_csv method of pandas and stores the resulting DataFrame in a variable named df
+
+* The fourth line of the code creates a new DataFrame named df1 that includes only the records from df where the value of the "CBF_01" column equals 1. The "CBF_01" column is a binary variable that indicates whether the person received a flu shot during the survey period. A value of 1 indicates that the person received a flu shot, while a value of 2 indicates that the person did not receive a flu shot.
+
+* The fifth line of the code creates a new DataFrame named df2 that includes only the records from df where the value of the "CBF_01" column equals 2. This group includes people who did not receive a flu shot.
+
+* The sixth line of the code computes the mean of the "P_NUMFLU" column for df1 and df2 using the mean method of pandas. The "P_NUMFLU" column represents the number of influenza doses the person received during the survey period.
+
+* The seventh line of the code returns a tuple containing the mean of the "P_NUMFLU" column for df1 and df2. This tuple contains two values, the mean of df1 and the mean of df2
+
+Therefore, the average_influenza_doses function calculates and returns the average number of influenza doses for people who received a flu shot (group df1) and those who did not receive a flu shot (group df2).
+
+
+
