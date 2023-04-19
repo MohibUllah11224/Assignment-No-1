@@ -26,7 +26,7 @@ ANS: The given code reads data from a CSV file named "NISPUF17.csv" using the pa
 Therefore, the average_influenza_doses function calculates and returns the average number of influenza doses for people who received a flu shot (group df1) and those who did not receive a flu shot (group df2).
 
 ## Question 3: It would be interesting to see if there is any evidence of a link between vaccine effectiveness and sex of the child. Calculate the ratio of the number of children who contracted chickenpox but were vaccinated against it (at least one varicella dose) versus those who were vaccinated but did not contract chicken pox. Return results by sex.
-##This function should return a dictionary in the form of (use the correct numbers):
+## This function should return a dictionary in the form of (use the correct numbers):
 
  ##   {"male":0.2,
    ## "female":0.4}
